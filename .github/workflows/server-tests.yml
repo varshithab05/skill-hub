@@ -1,0 +1,33 @@
+name: Server Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "server/**"
+      - ".github/workflows/server-tests.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "server/**"
+      - ".github/workflows/server-tests.yml"
+
+jobs:
+  test-server:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18 # Specify the Node.js container image
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies in server directory
+        run: npm ci
+        working-directory: ./server
+
+      - name: Run tests in server directory
+        run: npm test
+        working-directory: ./server

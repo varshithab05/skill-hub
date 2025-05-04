@@ -1,0 +1,108 @@
+# Strictly use npm for this project*
+# SkillHub Project Rules
+
+## Project Overview
+SkillHub is a full-stack freelance marketplace application that connects clients with skilled professionals. The platform facilitates job posting, bidding, project management, payments, and reviews.
+
+### Architecture
+- **Frontend**: React application (Vite) with Redux state management
+- **Backend**: Node.js Express server with MongoDB database
+- **Authentication**: JWT-based authentication system
+
+## Project Structure
+- `/client` - React frontend application
+  - `/src/components` - UI components
+  - `/src/redux` - Redux state management
+  - `/src/routes` - Frontend routing
+  - `/src/api` - API client services
+- `/server` - Node.js backend
+  - `/routes` - API endpoint definitions
+  - `/controllers` - Request handlers
+  - `/models` - Mongoose schemas
+  - `/middleware` - Express middleware
+  - `/config` - Configuration files
+
+## Best Practices
+1. **State Management**: Use Redux for global state, local state for component-specific data
+2. **API Calls**: Use the API service modules in `/client/src/api` for all backend requests
+3. **Error Handling**: Implement try/catch blocks for async operations
+4. **Authentication**: Always use the authentication middleware for protected routes
+5. **Code Organization**: Follow the existing pattern of separating concerns
+6. **Styling**: Use TailwindCSS utilities with Material UI components when needed
+
+## Key Technologies
+
+### Frontend
+- React 18.x
+- Redux Toolkit
+- React Router v6
+- Material UI v5
+- Tailwind CSS
+- Axios for API requests
+- Recharts for data visualization
+- FontAwesome icons
+
+### Backend
+- Express.js
+- Mongoose ODM
+- JWT authentication
+- Morgan for logging
+- Helmet for security headers
+- Rotating file logging
+
+## Data Models
+- User - Authentication and profile information
+- Job - Job postings with requirements
+- Bid - Proposals from freelancers
+- Project - Accepted jobs in progress
+- Review - Ratings and feedback
+- Wallet - Payment processing
+- Transaction - Financial records
+- Notification - User alerts
+
+## Development Workflow
+1. Use `pnpm dev` to run both client and server in development mode
+2. Client runs on http://localhost:5173
+3. Server runs on http://localhost:3000
+4. Ensure proper CORS settings when making API requests
+```
+
+## Detailed Package Information
+
+### Frontend Packages
+The client-side application uses:
+
+- **Core**: React 18.3.1, React DOM 18.3.1
+- **State Management**: Redux 5.0.1, React Redux 9.1.2, Redux Toolkit 2.2.7
+- **Routing**: React Router DOM 6.26.2
+- **UI Components**: Material UI 5.15.12, Emotion 11.11.4
+- **Icons**: FontAwesome, React Icons, Material UI Icons
+- **HTTP Client**: Axios 1.7.7
+- **Styling**: TailwindCSS 3.4.10
+- **Visualization**: Recharts 2.15.1
+- **Animation**: Framer Motion 11.13.1
+- **Development**: Vite 5.4.11, ESLint 9.9.0
+
+### Backend Packages
+The server uses:
+
+- **Framework**: Express.js
+- **Database**: Mongoose for MongoDB
+- **Security**: Helmet, JWT for authentication
+- **Logging**: Morgan, rotating-file-stream
+- **Development**: Nodemon 3.1.4
+
+## Project Purpose and Architecture
+
+This is a freelance marketplace platform with a comprehensive feature set including:
+
+1. User authentication and profile management
+2. Job posting and bidding system
+3. Project management tools
+4. Review and rating system
+5. Secure payment processing
+6. Notifications
+7. Administration capabilities
+
+The architecture follows a modern client-server model with RESTful API communication. The server implements proper middleware for authentication, logging, and error handling, while the client uses component-based architecture with clean separation between UI, state management, and API services.
+

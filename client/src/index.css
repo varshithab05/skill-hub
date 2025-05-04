@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #121212;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #1a1a1a 10px),
+        repeating-radial-gradient(circle at 50px 50px, transparent 0, #1a1a1a 10px);
+    background-size: 100px 100px;
+}
